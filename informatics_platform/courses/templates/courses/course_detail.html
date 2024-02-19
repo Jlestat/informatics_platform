@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    <h1>{{ course.title }}</h1>
+    <p>{{ course.description }}</p>
+    <h2>Уроки</h2>
+    <ul>
+        {% for lesson in lessons %}
+            <li>{{ lesson.title }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'courses_list' %}">Вернуться к списку курсов</a>
+{% endblock %}

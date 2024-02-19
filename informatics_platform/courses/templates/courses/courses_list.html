@@ -7,7 +7,7 @@
 <div>
     {% for course in courses %}
     <div>
-        <h3>{{ course.title }}</h3>
+        <a href="{{ course.pk }}"><h3>{{ course.title }}</h3></a>
         <p>{{ course.description }}</p>
     </div>
     {% endfor %}
