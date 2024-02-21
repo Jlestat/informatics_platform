@@ -10,6 +10,8 @@
         <a href="{{ course.pk }}"><h3>{{ course.title }}</h3></a>
         <p>{{ course.description }}</p>
     </div>
+    <a href="{% url 'enroll_course' course.id %}">Зарегистрироваться на курс</a>
     {% endfor %}
 </div>
+
 {% endblock %}
