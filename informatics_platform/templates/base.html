@@ -6,22 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Образовательная платформа по информатике{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'courses/style.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-r4NyP46KrjDjFGFPfmptfQuZKXzImZb3SFEbJL3lZSu1RjwUQZJyqW+Jv6Kz5K1N" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <h1><a href="/">Образовательная платформа по информатике</a></h1>
-    </header>
+<header>
+    <h1><a href="/">Образовательная платформа по информатике</a></h1>
+</header>
 
-    <nav>
+<nav>
 
-    </nav>
+</nav>
 
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
 
-    <footer>
-    </footer>
+<footer>
+</footer>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"
+        integrity="sha384-22bg9zmUzYyKhabQz0Kbaba8DHwLJG8mC1LV3mvILaB4cTR0qT9QUJwDp8R0JQyT"
+        crossorigin="anonymous"></script>
 </body>
 </html>
