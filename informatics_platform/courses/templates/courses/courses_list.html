@@ -1,17 +1,29 @@
 {% extends "base.html" %}
 
-{% block title %}Список курсов{% endblock %}
-
 {% block content %}
-<h2>Список курсов</h2>
-<div>
+<div class="container mt-4">
+  <div class="row">
     {% for course in courses %}
-    <div>
-        <a href="{{ course.pk }}"><h3>{{ course.title }}</h3></a>
-        <p>{{ course.description }}</p>
-    </div>
-    <a href="{% url 'enroll_course' course.id %}">Зарегистрироваться на курс</a>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          {% if course.image %}
+            <img src="{{ course.image.url }}" class="card-img-top" alt="{{ course.title }}">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{ course.title }}</h5>
+            <p class="card-text">{{ course.description|truncatewords:20 }}</p>
+            <a href="{% url 'course_detail' course.id %}" class="btn btn-primary">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      {% if forloop.counter|divisibleby:3 and not forloop.last %}
+        </div><div class="row">
+      {% endif %}
     {% endfor %}
+  </div>
 </div>
 
 {% endblock %}
+
+
+<a href="{% url 'enroll_course' course.id %}">Зарегистрироваться на курс</a>
