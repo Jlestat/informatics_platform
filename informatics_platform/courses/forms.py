@@ -10,7 +10,7 @@ class EnrollmentForm(forms.ModelForm):
         fields = ['course']
 
 
-class SingUpForm(UserCreationForm):
+class SignUpForm(UserCreationForm):
     email = forms.EmailField(max_length=254,
                              help_text='Обязательное поле. Укажите действующий адрес электронной почты.')
 

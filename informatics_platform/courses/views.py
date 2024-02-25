@@ -1,6 +1,7 @@
+from django.contrib.auth import authenticate, login
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Course, Lesson, Enrollment
-from .forms import EnrollmentForm
+from .forms import EnrollmentForm, SignUpForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -28,3 +29,18 @@ def enroll_course(request, course_id):
     else:
         form = EnrollmentForm(initial={'course': course})
     return render(request, 'courses/enroll_course.html', {'form': form, 'course': course})
+
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('home')
+    else:
+        form = SignUpForm()
+    return render(request, 'courses/signup.html', {'form': form})
