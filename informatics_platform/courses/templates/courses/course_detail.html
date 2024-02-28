@@ -5,7 +5,7 @@
     <h2>Уроки: </h2>
     <ul>
         {% for lesson in lessons %}
-            <li>{{ lesson.title }}</li>
+        <li>{{ lesson.title }}</li>
         {% endfor %}
     </ul>
     <a href="{% url 'courses_list' %}">Вернуться к списку курсов</a>
