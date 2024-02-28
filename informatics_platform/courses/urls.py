@@ -7,4 +7,5 @@ urlpatterns = [
     path('<int:course_id>', course_detail, name='course_detail'),
     path('enroll/<int:course_id>/', enroll_course, name='enroll_course'),
     path('signup/', signup, name='signup'),
+    path('<int:course_id>/lessons/<int:lesson_id>/', lesson_detail, name='lesson_detail'),
 ]
