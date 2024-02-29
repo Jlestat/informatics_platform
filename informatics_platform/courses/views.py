@@ -48,7 +48,7 @@ def signup(request):
 
 def lesson_detail(request, course_id, lesson_id):
     lesson = get_object_or_404(Lesson, course_id=course_id, id=lesson_id)
-    return render(request, 'course/lesson_detail.html', {'lesson': lesson})
+    return render(request, 'courses/lesson_detail.html', {'lesson': lesson})
 
 
 
