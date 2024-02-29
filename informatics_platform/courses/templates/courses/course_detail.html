@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Название курса: {{ course.title }}</h1>
-    <p>Описание курса: {{ course.description }}</p>
-    <h2>Уроки: </h2>
-    <ul>
-        {% for lesson in lessons %}
-        <li>{{ lesson.title }}</li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'courses_list' %}">Вернуться к списку курсов</a>
+<h1>Название курса: {{ course.title }}</h1>
+<p>Описание курса: {{ course.description }}</p>
+<h2>Уроки: </h2>
+<ul>
+    {% for lesson in lessons %}
+    <li><h3><a href="{% url 'lesson_detail' course_id=lesson.course.id lesson_id=lesson.id %}">{{ lesson.title }}</a>
+    </h3></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'courses_list' %}">Вернуться к списку курсов</a>
 
 
 {% endblock %}
