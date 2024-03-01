@@ -14,7 +14,7 @@
             <p class="card-text">{{ course.description|truncatewords:20 }}</p>
             <a href="{% url 'course_detail' course.id %}" class="btn btn-primary">Подробнее</a>
           </div>
-          <a href="{% url 'enroll_course' course.id %}">Зарегистрироваться на курс</a>
+<!--          <a href="{% url 'enroll_course' course.id %}">Зарегистрироваться на курс</a>-->
         </div>
       </div>
     {% if forloop.counter|divisibleby:3 and not forloop.last %}
